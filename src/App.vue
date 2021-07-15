@@ -1,28 +1,48 @@
 <template>
-  <div id="app">
-    <img alt="Vue logo" src="./assets/logo.png">
-    <HelloWorld msg="Welcome to Your Vue.js App"/>
-  </div>
+    <v-app>
+        <v-app-bar app color="primary" dark>
+            <v-spacer></v-spacer>
+
+            <v-btn href="https://github.com/vuetifyjs/vuetify/releases/latest" target="_blank" text> </v-btn>
+        </v-app-bar>
+
+        <v-main>
+            <v-row justify="center">
+                <v-col cols="6">
+                    <div class="text-center">
+                        <v-btn @click="changeText()">
+                            Click me
+                        </v-btn>
+                    </div>
+                </v-col>
+            </v-row>
+            <v-row justify="center">
+                <v-col cols="4" class="text-center">
+                    {{ text }}
+                </v-col>
+            </v-row>
+        </v-main>
+    </v-app>
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld.vue'
+// import HelloWorld from './components/HelloWorld';
 
 export default {
-  name: 'App',
-  components: {
-    HelloWorld
-  }
-}
-</script>
+    name: "App",
 
-<style>
-#app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
-}
-</style>
+    components: {
+        //HelloWorld,
+    },
+
+    data: () => ({
+        text: "Hello Max!",
+    }),
+
+    methods: {
+        changeText() {
+            this.text = "Hello Louis";
+        },
+    },
+};
+</script>
